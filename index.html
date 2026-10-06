@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Beginner-friendly examples of JavaScript functions, arrays, objects, DOM manipulation, and events.">
+  <title>Week 4 JavaScript Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <nav class="top-nav" aria-label="Main navigation">
+      <a class="brand" href="#top">JS <span>LAB</span></a>
+      <span class="week-label">WEEK 04 <span class="week-dot"></span> FUNDAMENTALS</span>
+    </nav>
+    <div class="hero" id="top">
+      <p class="eyebrow">A hands-on practice page</p>
+      <h1>JavaScript,<br><span>in action.</span></h1>
+      <p class="hero-copy">Try each example, change the values, and watch the page respond. All the code is in one small JavaScript file.</p>
+      <a class="text-link" href="#functions">Start exploring <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="header-stamp" aria-hidden="true"><span>LEARN BY</span><strong>DOING</strong><span>2026 / 04</span></div>
+  </header>
+
+  <main class="lesson-layout">
+    <aside class="lesson-nav" aria-label="Assignment tasks">
+      <p class="nav-heading">THE LESSON</p>
+      <a href="#functions"><span>01</span> Functions</a>
+      <a href="#arrays"><span>02</span> Arrays</a>
+      <a href="#objects"><span>03</span> Objects</a>
+      <a href="#dom"><span>04</span> DOM</a>
+      <a href="#events"><span>05</span> Events</a>
+      <a href="#project"><span>06</span> Mini project</a>
+    </aside>
+
+    <div class="lesson-content">
+      <section class="lesson-section" id="functions">
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <div><p class="eyebrow">Task one</p><h2>Functions</h2></div>
+        </div>
+        <p class="section-intro">Functions can greet a customer and calculate the price of their shopping.</p>
+        <form class="example-panel functions-panel" id="price-form">
+          <label>Your name<input id="customer-name" type="text" value="Asha" required></label>
+          <label>Price of one item<input id="item-price" type="number" min="0" step="0.01" value="5" required></label>
+          <label>Number of items<input id="item-quantity" type="number" min="1" step="1" value="3" required></label>
+          <button class="button button-dark" type="submit">Calculate total <span aria-hidden="true">↗</span></button>
+          <p class="result-line" id="price-result" aria-live="polite">Example output: Hello, Asha! Your total is $15.00.</p>
+        </form>
+        <p class="code-note">Change the values and select “Calculate total” to see the functions work.</p>
+      </section>
+
+      <section class="lesson-section" id="arrays">
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <div><p class="eyebrow">Task two</p><h2>Arrays</h2></div>
+        </div>
+        <p class="section-intro">An array stores a list of values. Add a student, rename the first one, or remove the last one.</p>
+        <div class="example-panel">
+          <form class="inline-form" id="student-form">
+            <label class="visually-hidden" for="new-student">New student name</label>
+            <input id="new-student" type="text" placeholder="Student name" required>
+            <button class="button button-teal" type="submit">Add student</button>
+          </form>
+          <div class="array-toolbar">
+            <button class="button button-light" id="update-student" type="button">Rename first</button>
+            <button class="button button-light" id="remove-student" type="button">Remove last</button>
+            <button class="button button-light" id="sort-students" type="button">Show A–Z</button>
+          </div>
+          <p class="small-note" id="array-summary" aria-live="polite"></p>
+          <ul class="name-list" id="student-list"></ul>
+          <p class="result-line" id="array-result" aria-live="polite">The student list is ready. Try adding a name.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="objects">
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <div><p class="eyebrow">Task three</p><h2>Objects</h2></div>
+        </div>
+        <p class="section-intro">An object groups related properties together. These three team-member objects can be updated below.</p>
+        <div class="example-panel">
+          <div class="object-list" id="team-list"></div>
+          <div class="array-toolbar">
+            <button class="button button-light" id="update-role" type="button">Update first role</button>
+            <button class="button button-light" id="add-property" type="button">Add a property</button>
+            <button class="button button-light" id="remove-property" type="button">Remove a property</button>
+          </div>
+          <p class="small-note" id="object-result" aria-live="polite">The examples use name, role, and department properties.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="dom">
+        <div class="section-heading">
+          <span class="section-number">04</span>
+          <div><p class="eyebrow">Task four</p><h2>DOM manipulation</h2></div>
+        </div>
+        <p class="section-intro">The DOM lets JavaScript find and change elements on this page.</p>
+        <div class="example-panel dom-panel">
+          <p class="dom-message" id="dom-message">This sentence is ready for an update.</p>
+          <div class="array-toolbar">
+            <button class="button button-light" id="change-text" type="button">Change text</button>
+            <button class="button button-light" id="change-html" type="button">Add bold text</button>
+            <button class="button button-light" id="change-style" type="button">Change style</button>
+            <button class="button button-light" id="add-note" type="button">Add a note</button>
+            <button class="button button-light" id="remove-note" type="button">Remove note</button>
+          </div>
+          <div id="note-area" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="events">
+        <div class="section-heading">
+          <span class="section-number">05</span>
+          <div><p class="eyebrow">Task five</p><h2>Events</h2></div>
+        </div>
+        <p class="section-intro">Events let a page respond to what a person types, selects, clicks, or presses.</p>
+        <div class="event-grid">
+          <div class="example-panel event-panel">
+            <label for="event-input">Input event</label>
+            <input id="event-input" type="text" placeholder="Type something...">
+            <p class="small-note" id="input-preview" aria-live="polite">Your live preview appears here.</p>
+            <label for="color-select">Change event</label>
+            <select id="color-select">
+              <option value="teal">Teal</option>
+              <option value="coral">Coral</option>
+              <option value="gold">Gold</option>
+            </select>
+            <div class="color-preview" id="color-preview">Choose a color above</div>
+          </div>
+          <div class="example-panel event-panel">
+            <label>Mouse event</label>
+            <div class="hover-target" id="hover-target" tabindex="0">Move your mouse over me</div>
+            <p class="small-note" id="mouse-result" aria-live="polite">Waiting for mouse movement.</p>
+            <label for="keyboard-input">Keyboard event</label>
+            <input id="keyboard-input" type="text" placeholder="Press any key here">
+            <p class="small-note" id="keyboard-result" aria-live="polite">Your key will be shown here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lesson-section project-section" id="project">
+        <div class="section-heading">
+          <span class="section-number">06</span>
+          <div><p class="eyebrow">Task six </p><h2>Little list</h2></div>
+        </div>
+        <p class="section-intro">A to-do list combines functions, an array of objects, the DOM, and events. Add a task, complete it, or remove it.</p>
+        <div class="todo-panel">
+          <div class="todo-topline"><span>YOUR TASKS</span><span id="task-count">0 ITEMS</span></div>
+          <form class="inline-form todo-form" id="todo-form">
+            <label class="visually-hidden" for="todo-input">New task</label>
+            <input id="todo-input" type="text" placeholder="What needs doing?" autocomplete="off" required>
+            <button class="button button-coral" type="submit">Add task <span aria-hidden="true">+</span></button>
+          </form>
+          <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+          <p class="todo-empty" id="todo-empty">Your list is clear. Add your first task above.</p>
+        </div>
+      </section>
+
+      <footer class="page-footer"><span>WEEK 04 / JAVASCRIPT FUNDAMENTALS</span><a href="#top">Back to top ↑</a></footer>
+    </div>
+  </main>
+</body>
+</html>
